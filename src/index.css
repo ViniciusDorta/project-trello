@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+::-webkit-scrollbar {
+    width: 6px; /* Largura da barra de rolagem */
+    height: 6px; /* Largura da barra de rolagem */
+    border-radius: 10px; /* Borda arredondada */
+    background-color: rgba(0, 0, 0, 0.1); /* Fundo transparente da área da barra de rolagem */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(128, 128, 128, 0.3); /* Cor da parte da barra de rolagem */
+    border-radius: 8px; /* Borda arredondada */
+}
+
+/* Customizando a barra de rolagem para Firefox */
+scrollbar-width: thin; /* Largura fina */
+scrollbar-color: rgba(128, 128, 128, 0.5) rgba(0, 0, 0, 0.1); /* Cor do thumb e do fundo da barra de rolagem */
