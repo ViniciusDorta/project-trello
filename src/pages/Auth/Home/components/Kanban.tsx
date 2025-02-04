@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { inicialColumns } from '../../utils/data';
+import { inicialColumns } from '../../../../utils/data';
 import { DragDropContext, Draggable, DropResult, Droppable } from 'react-beautiful-dnd';
 import { Box, Paper, TextField } from "@mui/material";
+import User from "../../../../components/AvatarComponent/AvatarComponent";
 
 export default function Kanban()
 {
@@ -74,19 +75,19 @@ export default function Kanban()
                         <Droppable droppableId={`${column.id}`}>
                             {(provided) => (
                                 <Box style={{ 
-                                    width: 400,
-                                    margin: 10,
+                                    width: 350,
+                                    margin: 6,
                                     padding: 10,
                                     borderRadius: 8,
                                     backgroundColor: "#ebebf1",
-                                    maxHeight: 'calc(100vh - 100px)',
-                                    minHeight: 'calc(100vh - 100px)'
+                                    maxHeight: 'calc(100vh - 90px)',
+                                    minHeight: 'calc(100vh - 90px)'
                                 }}>
                                     <TextField 
                                         variant="standard"
                                         className="w-full" 
                                         value={column.name}
-                                        inputProps={{ style: { fontSize: '1.2rem' } }} />
+                                        inputProps={{ style: { fontSize: '1rem', fontWeight: '600' } }} />
                                     <Box 
                                         width="100%"
                                         height="calc(100% - 40px)"
@@ -105,11 +106,17 @@ export default function Kanban()
                                                         {...provided.draggableProps}
                                                         ref={provided.innerRef}
                                                         style={{
-                                                            height: 40,
                                                             marginTop: 10,
                                                             padding: 5,
                                                             ...provided.draggableProps.style,
-                                                        }} > {item.content} </Paper>
+                                                        }} >
+                                                        {item.content}
+                                                        <div className="w-full flex justify-end">
+                                                            {item.name.trim() != '' &&
+                                                                <User name={item.name} />
+                                                            }
+                                                        </div>
+                                                    </Paper>
                                                 )}
                                             </Draggable>
                                         ))}

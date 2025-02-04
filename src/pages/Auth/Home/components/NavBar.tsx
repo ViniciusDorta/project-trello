@@ -13,9 +13,9 @@ export default function NavBar()
         <Box sx={{ flexGrow: 1, marginBottom: "10px" }}>
             <AppBar position="static" sx={{ backgroundColor: "#ffffff31" }}>
                 <Toolbar>
-                <Box display="flex" justifyContent="center" width="100%">
+                {/* <Box display="flex" justifyContent="center" width="100%">
                     <Box component="img" width="120px" src="/src/assets/images/trello-logo.png" />
-                </Box>
+                </Box> */}
                 {/* <IconButton
                     size="large"
                     edge="start"

@@ -1,5 +1,5 @@
-import NavBar from "../../components/NavBar/NavBar";
-import Kanban from "../../components/Kanban/Kanban";
+import NavBar from "./components/NavBar";
+import Kanban from "./components/Kanban";
 import { Box } from "@mui/material";
 
 export default function Principal() 
